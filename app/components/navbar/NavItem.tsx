@@ -17,8 +17,10 @@ const NavItem = ({ title, href, disabled }: Props) => {
       key={title}
       href={disabled ? "#" : href}
       className={cn(
-        "flex items-center text-lg font-medium hover:text-foreground/70 sm:text-sm",
-        href.startsWith(`/${segment}`) ? "text-foreground/70" : "text-white",
+        "flex items-center text-lg font-medium hover:text-foreground/80 sm:text-sm",
+        href.startsWith(`/${segment}`)
+          ? "text-foreground"
+          : "text-foreground/60",
         disabled && "cursor-not-allowed opacity-80"
       )}
     >
