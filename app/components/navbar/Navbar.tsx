@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useState } from "react";
 import { MainNavItem } from "@/types";
+import Link from "next/link";
 
 import NavItem from "./NavItem";
+import MobileNav from "./MobileNav";
 import Logo from "../logo";
+import { Icons } from "@/components/ui/icons";
 
 interface Props {
   items?: MainNavItem[];
@@ -13,9 +15,10 @@ interface Props {
 }
 
 const Navbar = ({ items, children }: Props) => {
-  const segment = useSelectedLayoutSegment();
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
-    <header className="flex gap-6 md:gap-10">
+    <header className="flex justify-between md:justify-start gap-6 md:gap-10">
       <Link href={"/"}>
         <Logo />
       </Link>
@@ -32,6 +35,16 @@ const Navbar = ({ items, children }: Props) => {
           ))}
         </nav>
       ) : null}
+
+      <button
+        className="flex items-center space-x-2 md:hidden"
+        onClick={() => setShowMobileMenu(!showMobileMenu)}
+      >
+        <Icons.menuIcon />
+      </button>
+      {showMobileMenu && items && (
+        <MobileNav items={items}>{children}</MobileNav>
+      )}
     </header>
   );
 };
