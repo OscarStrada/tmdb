@@ -47,7 +47,7 @@ const Carrousel = ({ url }: Props) => {
   }, [url]);
 
   return (
-    <div className="overflow-y-scroll">
+    <div className="overflow-y-scroll scrollbar-hide">
       <div className="flex gap-6 container">
         {trendingMovies?.map((movie) => (
           <MovieCard
