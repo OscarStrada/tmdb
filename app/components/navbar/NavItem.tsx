@@ -9,7 +9,7 @@ type Props = {
   disabled?: boolean;
 };
 
-const NavItem = ({ title, href, disabled }: Props) => {
+export const NavItem = ({ title, href, disabled }: Props) => {
   const segment = useSelectedLayoutSegment();
 
   return (
@@ -28,5 +28,3 @@ const NavItem = ({ title, href, disabled }: Props) => {
     </Link>
   );
 };
-
-export default NavItem;
