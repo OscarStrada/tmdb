@@ -1,0 +1,14 @@
+{
+  "Languages": {
+    "en": "inglés",
+    "es": "español"
+  },
+  "Navbar": {
+    "links": {
+      "movies": "Películas",
+      "tvShows": "TV Shows",
+      "people": "Actores",
+      "more": "Más"
+    }
+  }
+}
