@@ -1,8 +1,8 @@
 import { Hero, Carrousel } from "@/app/components";
 
 const HomePage = () => {
-  const baseUrl = "https://api.themoviedb.org/3";
-  const api_key = "api_key=4f298a53e552283bee957836a529baec";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const api_key = `api_key=${process.env.NEXT_PUBLIC_TMDB_KEY}`;
   const language = "language=en-US";
 
   return (

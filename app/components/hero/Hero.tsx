@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Hero = ({ title, subtitle }: Props) => {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   return (
     <section className="bg-cyan-800 w-full relative h-72">
