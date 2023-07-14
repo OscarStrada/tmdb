@@ -7,8 +7,12 @@ interface Props {
 
 export const AppLayout = ({ children }: Props) => {
   return (
-    <div className="container z-40 bg-background border-b py-4">
-      <Navbar items={siteConfig.mainNav} />
+    <div className="flex min-h-screen flex-col">
+      <div className="container z-40 bg-background border-b py-4">
+        <Navbar items={siteConfig.mainNav} />
+      </div>
+
+      <main className="flex-1">{children}</main>
     </div>
   );
 };
