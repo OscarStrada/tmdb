@@ -5,7 +5,7 @@ interface Props {
   subtitle: string;
 }
 
-export const Hero = ({ title, subtitle }: Props) => {
+const Hero = ({ title, subtitle }: Props) => {
   const baseUrl = "http://localhost:3000";
 
   return (
@@ -26,3 +26,5 @@ export const Hero = ({ title, subtitle }: Props) => {
     </section>
   );
 };
+
+export default Hero;
