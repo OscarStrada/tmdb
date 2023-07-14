@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       title: "TV Shows",
-      href: "/pricing",
+      href: "/tvshows",
     },
     {
       title: "People",
