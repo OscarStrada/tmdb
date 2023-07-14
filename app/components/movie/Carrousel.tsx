@@ -46,8 +46,6 @@ const Carrousel = ({ url }: Props) => {
     fetchData();
   }, [url]);
 
-  console.log(trendingMovies);
-
   return (
     <div className="overflow-y-scroll">
       <div className="flex gap-6 container">
