@@ -2,6 +2,9 @@
 
 module.exports = {
     images: {
-      domains: ['localhost'],
+      domains: [
+        'localhost',
+        'image.tmdb.org'
+      ],
     },
 };
