@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
 interface Movie {
-  id: number;
+  id: string;
   poster_path: string;
   original_title: string;
   vote_average: number;
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Carrousel = ({ url }: Props) => {
-  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const baseImageUrl = "https://image.tmdb.org/t/p/w300";
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Carrousel = ({ url }: Props) => {
         if (response.ok) {
           const data = await response.json();
           // Do something with the data
-          setTrendingMovies(data.results);
+          setMovies(data.results);
         } else {
           // Handle the error if the response is not okay
           console.log("Error:", response.status);
@@ -46,10 +46,12 @@ const Carrousel = ({ url }: Props) => {
     fetchData();
   }, [url]);
 
+  console.log(movies);
+
   return (
     <div className="overflow-y-scroll scrollbar-hide">
       <div className="flex gap-6 container">
-        {trendingMovies?.map((movie) => (
+        {movies?.map((movie) => (
           <MovieCard
             key={movie.id}
             imageSrc={`${baseImageUrl}/${movie.poster_path}`}
@@ -57,6 +59,7 @@ const Carrousel = ({ url }: Props) => {
             title={movie.original_title}
             date="June 06, 2023"
             voteAverage={movie.vote_average}
+            id={movie.id}
           />
         ))}
       </div>
