@@ -3,3 +3,12 @@ export const formatRuntime = (minutes: number) => {
   const remainingMinutes = minutes % 60;
   return `${hours}h ${remainingMinutes}m`;
 };
+
+export const getReleaseYear = (date: string | undefined) => {
+  if (date) {
+    const releaseDate = new Date(date);
+    return releaseDate.getFullYear();
+  }
+
+  return null;
+};
