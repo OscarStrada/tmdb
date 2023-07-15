@@ -3,7 +3,7 @@
 import "./index.css";
 
 interface Props {
-  score: number | null;
+  score: number | 0;
   width: string;
   fontSize: string;
 }

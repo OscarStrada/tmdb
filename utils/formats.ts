@@ -18,5 +18,5 @@ export const getScoreInPercentage = (voteAverage: number | undefined) => {
     return Math.round(voteAverage) * 10;
   }
 
-  return null;
+  return 0;
 };
