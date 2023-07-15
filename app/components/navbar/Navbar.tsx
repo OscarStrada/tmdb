@@ -4,12 +4,10 @@ import { useState } from "react";
 import { MainNavItem } from "@/types";
 import Link from "next/link";
 
-import NavItem from "./NavItem";
-import MobileNav from "./MobileNav";
-import Logo from "../logo";
+import { ModeToggle } from "@/components/ui/modeToggle";
+import { NavItem, MobileNav, Logo } from "./index";
 import { Icons } from "@/components/ui/icons";
 import LanguageSelector from "../languageSelector/LanguageSelector";
-import { ModeToggle } from "@/components/ui/modeToggle";
 
 interface Props {
   items?: MainNavItem[];

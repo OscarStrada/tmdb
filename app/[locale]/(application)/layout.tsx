@@ -1,4 +1,4 @@
-import { Navbar } from "@/app/components";
+import { Navbar, Footer } from "@/app/components";
 import { siteConfig } from "@/config/site";
 
 interface Props {
@@ -13,6 +13,7 @@ export const AppLayout = ({ children }: Props) => {
       </div>
 
       <main className="flex-1">{children}</main>
+      <Footer />
     </div>
   );
 };

@@ -4,7 +4,8 @@ module.exports = {
     images: {
       domains: [
         'localhost',
-        'image.tmdb.org'
+        'image.tmdb.org',
+        'themoviedatabase.vercel.app'
       ],
     },
 };

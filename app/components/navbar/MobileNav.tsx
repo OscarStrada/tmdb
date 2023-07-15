@@ -9,7 +9,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const MobileNav = ({ items, children }: Props) => {
+export const MobileNav = ({ items, children }: Props) => {
   useLockBody();
 
   return (
@@ -38,5 +38,3 @@ const MobileNav = ({ items, children }: Props) => {
     </div>
   );
 };
-
-export default MobileNav;

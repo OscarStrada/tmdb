@@ -5,7 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "../providers/theme";
 import { Toaster } from "@/components/ui/toaster";
-import "@/app/globals.css";
+import "@/app/styles/globals.css";
 
 const font = Inter({
   subsets: ["latin"],

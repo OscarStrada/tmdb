@@ -1,0 +1,10 @@
+:root {
+  --green: #90cea1;
+  --blue: #01b4e4;
+  --dark-blue: #0d253f;
+}
+
+.circle-progress {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
