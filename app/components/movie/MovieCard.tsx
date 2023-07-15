@@ -38,25 +38,6 @@ const MovieCard = ({
         <div className="absolute -bottom-7 left-2">
           <CircularLoader width="50" score={userScore} fontSize="12" />
         </div>
-        {/* <div
-          className="
-            absolute 
-            -bottom-7 
-            left-2 
-            flex 
-            h-11 
-            w-11 
-            rounded-full 
-            items-center 
-            justify-center 
-            text-sm 
-            font-semibold
-            text-white
-            bg-[#01b4e4]
-          "
-        >
-          {votes}%
-        </div> */}
       </div>
 
       <div>
