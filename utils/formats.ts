@@ -13,6 +13,10 @@ export const getReleaseYear = (date: string | undefined) => {
   return null;
 };
 
-export const getScoreInPercentage = (voteAverage: number) => {
-  return Math.round(voteAverage) * 10;
+export const getScoreInPercentage = (voteAverage: number | undefined) => {
+  if (voteAverage) {
+    return Math.round(voteAverage) * 10;
+  }
+
+  return null;
 };
