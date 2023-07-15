@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import CircularLoader from "../circularLoader/CircularLoader";
+import { getScoreInPercentage } from "@/utils/formats";
 
 interface Props {
+  id: string;
   imageSrc: string;
   imageAlt: string;
   title: string;
@@ -8,11 +12,22 @@ interface Props {
   voteAverage: number;
 }
 
-const MovieCard = ({ imageSrc, imageAlt, title, date, voteAverage }: Props) => {
-  const votes = Math.round(voteAverage) * 10;
+const MovieCard = ({
+  id,
+  imageSrc,
+  imageAlt,
+  title,
+  date,
+  voteAverage,
+}: Props) => {
+  const userScore = getScoreInPercentage(voteAverage);
+  const router = useRouter();
 
   return (
-    <div className="flex flex-col gap-10 last:pr-8">
+    <div
+      onClick={() => router.push(`/movie/${id}`)}
+      className="flex flex-col gap-10 last:pr-8 cursor-pointer"
+    >
       <div className="w-44 h-56 rounded-md relative">
         <Image
           src={imageSrc}
@@ -20,7 +35,10 @@ const MovieCard = ({ imageSrc, imageAlt, title, date, voteAverage }: Props) => {
           fill
           className="aspect-auto rounded-md w-full h-full object-cover"
         />
-        <div
+        <div className="absolute -bottom-7 left-2">
+          <CircularLoader width="50" score={userScore} fontSize="12" />
+        </div>
+        {/* <div
           className="
             absolute 
             -bottom-7 
@@ -34,13 +52,11 @@ const MovieCard = ({ imageSrc, imageAlt, title, date, voteAverage }: Props) => {
             text-sm 
             font-semibold
             text-white
-            bg-gradient-to-br 
-            from-cyan-500
-            to-cyan-700
+            bg-[#01b4e4]
           "
         >
           {votes}%
-        </div>
+        </div> */}
       </div>
 
       <div>
