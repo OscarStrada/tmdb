@@ -12,7 +12,7 @@ const RecommendationCard = ({ title, imageSrc, imageAlt }: Props) => {
       <div className="w-64 h-40 rounded-md bg-black relative">
         <Image
           src={imageSrc}
-          alt="backdrop"
+          alt={imageAlt}
           fill
           className="object-cover rounded-md w-full h-full"
         />
