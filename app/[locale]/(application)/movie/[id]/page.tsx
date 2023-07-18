@@ -20,7 +20,7 @@ const MovieDetails = async ({ params }: { params: Params }) => {
           <ActorsSlider title={"Top billed cast"} actors={movie.credits.cast} />
           <hr />
 
-          <ReviewCard review={firstReview} />
+          {/* <ReviewCard review={firstReview} /> */}
         </div>
 
         <Sidebar movie={movie} />
