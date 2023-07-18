@@ -1,69 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import MovieCard from "./MovieCard";
 
-interface Movie {
-  id: string;
-  poster_path: string;
-  original_title: string;
-  vote_average: number;
-  // Add more properties if required
-}
-
 interface Props {
-  url: string;
+  title: string;
+  movies: any;
+  className: string;
 }
 
-const Carrousel = ({ url }: Props) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const baseImageUrl = "https://image.tmdb.org/t/p/w300";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const options = {
-        method: "GET",
-        headers: {
-          accept: "application/json",
-        },
-      };
-
-      try {
-        const response = await fetch(url, options);
-        if (response.ok) {
-          const data = await response.json();
-          // Do something with the data
-          setMovies(data.results);
-        } else {
-          // Handle the error if the response is not okay
-          console.log("Error:", response.status);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  console.log(movies);
+const Carrousel = ({ title, movies, className }: any) => {
+  const baseImageUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL;
 
   return (
-    <div className="overflow-y-scroll scrollbar-hide">
-      <div className="flex gap-6 container">
-        {movies?.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            imageSrc={`${baseImageUrl}/${movie.poster_path}`}
-            imageAlt="Movie wallpaper"
-            title={movie.original_title}
-            date="June 06, 2023"
-            voteAverage={movie.vote_average}
-            id={movie.id}
-          />
-        ))}
+    <section className={cn("py-8 flex flex-col gap-6", className)}>
+      <h3 className="container text-xl font-medium capitalize">{title}</h3>
+      <div className="overflow-y-scroll scrollbar-hide">
+        <div className="flex gap-6 container">
+          {movies?.map((movie: any) => (
+            <MovieCard
+              key={movie.id}
+              imageSrc={`${baseImageUrl}/${movie.poster_path}`}
+              imageAlt="Movie wallpaper"
+              title={movie.original_title}
+              date="June 06, 2023"
+              voteAverage={movie.vote_average}
+              id={movie.id}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
