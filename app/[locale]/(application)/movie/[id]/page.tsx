@@ -9,7 +9,8 @@ interface Params {
 const MovieDetails = async ({ params }: { params: Params }) => {
   const movie = await getMovieById(params.id);
   const reviews = await getReviewById(params.id);
-  const firstReview = reviews.results[0];
+  const firstReview = reviews.results.slice(0, 1);
+  console.log(firstReview);
 
   return (
     <div>
@@ -20,7 +21,15 @@ const MovieDetails = async ({ params }: { params: Params }) => {
           <ActorsSlider title={"Top billed cast"} actors={movie.credits.cast} />
           <hr />
 
-          {/* <ReviewCard review={firstReview} /> */}
+          <section className="flex flex-col gap-6">
+            <h3 className="text-xl font-medium capitalize">Social</h3>
+
+            {firstReview.length > 0 ? (
+              <ReviewCard review={firstReview} />
+            ) : (
+              <p>{`We don't have any reviews for ${movie.original_title}`}</p>
+            )}
+          </section>
         </div>
 
         <Sidebar movie={movie} />
