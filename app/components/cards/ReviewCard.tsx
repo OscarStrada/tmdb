@@ -6,13 +6,14 @@ import { useState } from "react";
 
 interface Props {
   review: any;
+  movieTitle: string;
 }
 
-const ReviewCard = ({ review }: Props) => {
+const ReviewCard = ({ review, movieTitle }: Props) => {
   const [showFullContent, setShowFullContent] = useState(false);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL;
   const defaultProfilePhoto = `${process.env.NEXT_PUBLIC_BASE_URL}/empty-profile.webp`;
-  const createdAt = formatDate(review.created_at);
+  const createdAt = formatDate(review?.created_at);
 
   const handleClick = () => {
     setShowFullContent(!showFullContent);
@@ -24,11 +25,15 @@ const ReviewCard = ({ review }: Props) => {
     return tmp.textContent || tmp.innerText || "";
   };
 
-  const contentText = stripHTMLTags(review.content);
+  const contentText = stripHTMLTags(review?.content);
   const words = contentText.split(" ");
   const displayedContent = showFullContent
     ? contentText
     : words.slice(0, 100).join(" ");
+
+  if (!review) {
+    return <p>{`We don't have any reviews for ${movieTitle}`}</p>;
+  }
 
   return (
     <div className="w-full rounded-md bg-muted flex gap-5 px-6 py-8">
