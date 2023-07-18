@@ -12,6 +12,7 @@ const RecommendationsSlider = ({
   movieTitle,
 }: Props) => {
   const imageUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL;
+  const emptyBackgroundImage = `${process.env.NEXT_PUBLIC_BASE_URL}/empty-background.png`;
 
   return (
     <section className="flex flex-col gap-6">
@@ -23,7 +24,11 @@ const RecommendationsSlider = ({
               <RecommendationCard
                 key={recommendation.id}
                 title={recommendation.title}
-                imageSrc={`${imageUrl}/${recommendation.backdrop_path}`}
+                imageSrc={
+                  recommendation.backdrop_path
+                    ? `${imageUrl}/${recommendation.backdrop_path}`
+                    : emptyBackgroundImage
+                }
                 imageAlt={`${recommendation.title} image`}
               />
             ))}
