@@ -33,7 +33,7 @@ const ReviewCard = ({ review }: Props) => {
       <div className="w-16 h-16 relative rounded-full">
         <Image
           src={
-            review.author_details.avatar_path
+            review.author_details?.avatar_path
               ? `${baseImageUrl}/${review.author_details.avatar_path}`
               : defaultProfilePhoto
           }
