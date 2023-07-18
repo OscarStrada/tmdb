@@ -17,8 +17,8 @@ const MovieDetails = async ({ params }: { params: Params }) => {
     <div>
       <MovieHero movie={movie} />
 
-      <div className="w-full container flex">
-        <div className="w-3/4 flex flex-col gap-14">
+      <div className="w-full container flex flex-col md:flex-row">
+        <div className="w-full order-2 md:order-1 md:w-3/4 flex flex-col gap-14 py-8">
           <ActorsSlider title={"Top billed cast"} actors={movie.credits.cast} />
           <hr />
 
