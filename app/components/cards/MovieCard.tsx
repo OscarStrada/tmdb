@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import CircularLoader from "../circularLoader/CircularLoader";
@@ -26,7 +28,7 @@ const MovieCard = ({
   return (
     <div
       onClick={() => router.push(`/movie/${id}`)}
-      className="flex flex-col gap-10 last:pr-8 cursor-pointer"
+      className="flex flex-col gap-12 w-44 cursor-pointer"
     >
       <div className="w-44 h-56 rounded-md relative">
         <Image
@@ -40,7 +42,7 @@ const MovieCard = ({
         </div>
       </div>
 
-      <div>
+      <div className="w-full">
         <p className="font-semibold pb-2">{title}</p>
         <span className="font-light text-sm">{date}</span>
       </div>
