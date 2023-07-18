@@ -36,7 +36,7 @@ const ReviewCard = ({ review, movieTitle }: Props) => {
   }
 
   return (
-    <div className="w-full rounded-md bg-muted flex gap-5 px-6 py-8">
+    <div className="w-full rounded-md bg-muted dark:bg-popover flex gap-5 px-6 py-8">
       <div className="w-16 h-16 relative rounded-full">
         <Image
           src={
