@@ -1,11 +1,12 @@
-export { default as Carrousel } from "./movie";
-export { default as CircularLoader } from "./circularLoader";
 export { default as Footer } from "./footer";
-export { default as LanguageSelector } from "./languageSelector";
 export { default as Navbar } from "./navbar";
 export { default as Sidebar } from "./sidebar";
 export { default as HomeHero } from "./heros/HomeHero";
 export { default as MovieHero } from "./heros/MovieHero";
 export { default as ActorCard } from "./cards/ActorCard";
-export { default as ActorsSlider } from "./sliders/ActorsSlider";
+export { default as MovieCard } from "./cards/MovieCard";
 export { default as ReviewCard } from "./cards/ReviewCard";
+export { default as ActorsSlider } from "./sliders/ActorsSlider";
+export { default as MoviesSlider } from "./sliders/MoviesSlider";
+export { default as CircularLoader } from "./circularLoader";
+export { default as LanguageSelector } from "./languageSelector";
