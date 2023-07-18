@@ -2,7 +2,7 @@ import getPopularMovies from "@/actions/getPopularMovies";
 import getTopRatedMovies from "@/actions/getTopRatedMovies";
 import getTrendingMovies from "@/actions/getTrendingMovies";
 import getUpcomingMovies from "@/actions/getUpcomingMovies";
-import { HomeHero, Carrousel } from "@/app/components";
+import { HomeHero, MoviesSlider } from "@/app/components";
 
 const HomePage = async () => {
   const trendingMovies = await getTrendingMovies();
@@ -17,14 +17,14 @@ const HomePage = async () => {
         subtitle="Millions of movies, TV shows and people to discover. Explore now."
       />
 
-      <Carrousel title="Trending" movies={trendingMovies.results} />
-      <Carrousel
+      <MoviesSlider title="Trending" movies={trendingMovies.results} />
+      <MoviesSlider
         title="Upcoming"
         movies={upcomingMovies.results}
         className="bg-primary-foreground dark:bg-popover"
       />
-      <Carrousel title="Top rated" movies={topRatedMovies.results} />
-      <Carrousel
+      <MoviesSlider title="Top rated" movies={topRatedMovies.results} />
+      <MoviesSlider
         title="Popular"
         movies={popularMovies.results}
         className="bg-primary-foreground dark:bg-popover"
