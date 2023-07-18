@@ -1,5 +1,6 @@
 "use client";
 
+import { formatDate } from "@/utils/formats";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -11,6 +12,7 @@ const ReviewCard = ({ review }: Props) => {
   const [showFullContent, setShowFullContent] = useState(false);
   const baseImageUrl = process.env.NEXT_PUBLIC_API_IMAGE_URL;
   const defaultProfilePhoto = `${process.env.NEXT_PUBLIC_BASE_URL}/empty-profile.webp`;
+  const createdAt = formatDate(review.created_at);
 
   const handleClick = () => {
     setShowFullContent(!showFullContent);
@@ -48,7 +50,7 @@ const ReviewCard = ({ review }: Props) => {
           <h4 className="text-xl font-semibold">A review by {review.author}</h4>
           <h5 className="text-sm font-light">
             Written by <span className="font-semibold">{review.author}</span> on{" "}
-            {review.created_at}
+            {createdAt}
           </h5>
         </div>
 
