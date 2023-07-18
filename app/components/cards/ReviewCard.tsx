@@ -5,7 +5,6 @@ import { useState } from "react";
 
 interface Props {
   review: any;
-  title?: string;
 }
 
 const ReviewCard = ({ review }: Props) => {
