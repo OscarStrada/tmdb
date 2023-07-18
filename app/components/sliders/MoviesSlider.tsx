@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import MovieCard from "./MovieCard";
+import { MovieCard } from "@/app/components";
 
 interface Props {
   title: string;
