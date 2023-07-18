@@ -5,7 +5,7 @@ interface Props {
   subtitle: string;
 }
 
-const Hero = ({ title, subtitle }: Props) => {
+const HomeHero = ({ title, subtitle }: Props) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   return (
@@ -27,4 +27,4 @@ const Hero = ({ title, subtitle }: Props) => {
   );
 };
 
-export default Hero;
+export default HomeHero;
