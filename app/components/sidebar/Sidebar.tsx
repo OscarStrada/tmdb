@@ -38,14 +38,7 @@ const Sidebar = ({ movie }: Props) => {
   const revenue = formatCurrency(movie?.revenue ?? 0, "en-US", "USD");
 
   return (
-    <div className="w-1/4 py-10 pl-8 flex flex-col gap-10">
-      <div className="flex gap-4">
-        <LinkIcon />
-        <LinkIcon />
-        <LinkIcon />
-        <LinkIcon />
-      </div>
-
+    <div className="order-1 md:order-2 w-full md:w-1/4 py-10 md:pl-8 flex flex-col gap-10">
       <div className="flex flex-col gap-5">
         <SideItem title="Status" data={movie?.status} />
         <SideItem title="Original Language" data={movie?.original_language} />
@@ -64,6 +57,16 @@ const Sidebar = ({ movie }: Props) => {
           </div>
         </div>
       </div>
+
+      <a
+        href={movie.homepage}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex gap-4 items-center"
+      >
+        <LinkIcon />
+        <p>Movie website</p>
+      </a>
     </div>
   );
 };

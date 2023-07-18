@@ -20,7 +20,7 @@ const ActorCard = ({
 
   return (
     <div
-      onClick={() => {}}
+      onClick={() => router.push(`/person/${id}`)}
       className="flex flex-col gap-2 cursor-pointer border shadow-md rounded-md"
     >
       <div className="w-36 h-44 rounded-md relative">
