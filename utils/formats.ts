@@ -20,3 +20,16 @@ export const getScoreInPercentage = (voteAverage: number | undefined) => {
 
   return 0;
 };
+
+export const formatCurrency = (
+  number: number,
+  locale: string,
+  currency: string
+): string => {
+  const formatter = new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  });
+
+  return formatter.format(number);
+};
