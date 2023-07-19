@@ -66,17 +66,22 @@ const MovieHero = ({ movie }: Props) => {
               <span className="text-xl font-light hidden md:block opacity-60">{`(${releaseYear})`}</span>
             </div>
 
-            <div className="flex gap-4 text-sm font-medium">
+            <div className="flex gap-2 text-sm font-medium">
               <div className="flex gap-2">
-                <div className="border dark:border-white px-2">PG-13</div>
-                <p>{movie.release_date}</p>
+                <div className="border dark:border-white px-2 rounded-sm opacity-60">
+                  PG-13
+                </div>
+                <p>{movie.release_date} |</p>
               </div>
               <ul className="flex gap-1">
-                {movie.genres.map((genre: any) => (
-                  <li key={genre.id}>{genre.name},</li>
+                {movie.genres.map((genre: any, index: number) => (
+                  <li key={genre.id}>
+                    {genre.name}
+                    {index !== movie.genres.length - 1 && ","}
+                  </li>
                 ))}
               </ul>
-              <span>{runtime}</span>
+              <span>| {runtime}</span>
             </div>
           </div>
 

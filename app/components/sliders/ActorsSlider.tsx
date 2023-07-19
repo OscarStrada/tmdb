@@ -15,7 +15,7 @@ const ActorsSlider = ({ title, actors, className }: any) => {
   const defaultProfilePhoto = `${process.env.NEXT_PUBLIC_BASE_URL}/empty-profile.webp`;
 
   return (
-    <section className={cn("pt-8 flex flex-col gap-6", className)}>
+    <section className={cn("flex flex-col gap-6", className)}>
       <h3 className="text-xl font-medium capitalize">{title}</h3>
       <div className="overflow-y-scroll scrollbar-hide">
         <div className="flex gap-6">

@@ -1,6 +1,7 @@
 import getMovieById from "@/actions/getMovieById";
 import getReviewById from "@/actions/getReviewsById";
 import { ActorsSlider, MovieHero, ReviewCard, Sidebar } from "@/app/components";
+import RecommendationsSlider from "@/app/components/sliders/RecommendationsSlider";
 
 interface Params {
   id: string;
@@ -10,25 +11,29 @@ const MovieDetails = async ({ params }: { params: Params }) => {
   const movie = await getMovieById(params.id);
   const reviews = await getReviewById(params.id);
   const firstReview = reviews.results[0];
+  const recommendations = movie.recommendations?.results;
 
   return (
     <div>
       <MovieHero movie={movie} />
 
-      <div className="w-full container flex">
-        <div className="w-3/4 flex flex-col gap-14">
+      <div className="w-full container flex flex-col md:flex-row">
+        <div className="w-full order-2 md:order-1 md:w-3/4 flex flex-col gap-14 py-8">
           <ActorsSlider title={"Top billed cast"} actors={movie.credits.cast} />
           <hr />
 
           <section className="flex flex-col gap-6">
             <h3 className="text-xl font-medium capitalize">Social</h3>
-
-            {firstReview ? (
-              <ReviewCard review={firstReview} />
-            ) : (
-              <p>{`We don't have any reviews for ${movie.original_title}`}</p>
-            )}
+            <ReviewCard review={firstReview} movieTitle={movie.title} />
           </section>
+
+          <hr />
+
+          <RecommendationsSlider
+            recommendations={recommendations}
+            title="Recommendations"
+            movieTitle={movie.title}
+          />
         </div>
 
         <Sidebar movie={movie} />

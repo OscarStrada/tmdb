@@ -1,8 +1,8 @@
-const getMovieById = async (id: string) => {
+const getPersonById = async (id: string) => {
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_KEY;
-  const queries = `api_key=${API_KEY}&append_to_response=keywords,credits,recommendations`;
-  const url = `${API_BASE_URL}/movie/${id}?${queries}`;
+  const queries = `api_key=${API_KEY}`;
+  const url = `${API_BASE_URL}/person/${id}?${queries}`;
 
   try {
     const response = await fetch(url);
@@ -13,4 +13,4 @@ const getMovieById = async (id: string) => {
   }
 };
 
-export default getMovieById;
+export default getPersonById;

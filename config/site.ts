@@ -3,20 +3,16 @@ import { SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   mainNav: [
     {
-      title: "Movies",
-      href: "/movies",
+      title: "Popular",
+      href: "/popular",
     },
     {
-      title: "TV Shows",
-      href: "/tvshows",
+      title: "Upcoming",
+      href: "/upcoming",
     },
     {
-      title: "People",
-      href: "/people",
-    },
-    {
-      title: "More",
-      href: "/more",
+      title: "Top Rated",
+      href: "/toprated",
     },
   ],
 };

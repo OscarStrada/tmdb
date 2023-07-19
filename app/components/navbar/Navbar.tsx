@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ModeToggle } from "@/components/ui/modeToggle";
 import { NavItem, MobileNav, Logo } from "./index";
 import { Icons } from "@/components/ui/icons";
-import LanguageSelector from "../languageSelector/LanguageSelector";
+// import LanguageSelector from "../languageSelector/LanguageSelector";
 
 interface Props {
   items?: MainNavItem[];
@@ -39,7 +39,7 @@ const Navbar = ({ items, children }: Props) => {
       </div>
 
       <div className="hidden md:flex gap-4 items-center">
-        <LanguageSelector />
+        {/* <LanguageSelector /> */}
         <ModeToggle />
       </div>
 
