@@ -1,5 +1,5 @@
 import getPersonById from "@/actions/getPersonById";
-import Actor from "@/app/components/actor/Actor";
+import { Actor } from "@/app/components";
 
 interface Params {
   id: string;

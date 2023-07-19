@@ -1,3 +1,4 @@
+export { default as Actor } from "./actor";
 export { default as Footer } from "./footer";
 export { default as Navbar } from "./navbar";
 export { default as Sidebar } from "./sidebar";
